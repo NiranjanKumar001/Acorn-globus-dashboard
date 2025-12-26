@@ -18,7 +18,7 @@ export default function MenuSection({
         <span className="text-[13px] font-semibold text-gray-800">{title}</span>
         
         {showAddButton && (
-          <button className="w-5 h-5 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+          <button className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors shadow-sm">
             <Plus className="w-4 h-4" strokeWidth={2} />
           </button>
         )}
@@ -59,17 +59,17 @@ function SubSection({ label, items = [], defaultOpen = true, isLast = false, sho
       {showConnector && (
         <>
           {/* Vertical line */}
-          <div className={`absolute left-0 w-px bg-gray-200 ${isLast && !isOpen ? 'h-[14px] top-0' : 'top-0 bottom-0'}`} />
+          <div className={`absolute left-0 w-px bg-gray-300 ${isLast && !isOpen ? 'h-[14px] top-0' : 'top-0 bottom-0'}`} />
           {/* Horizontal line */}
-          <div className="absolute left-0 top-[14px] w-3 h-px bg-gray-200" />
+          <div className="absolute left-0 top-[14px] w-3 h-px bg-gray-300" />
         </>
       )}
       
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full py-[6px] pl-5 text-gray-600 hover:text-gray-800 transition-colors"
+        className="flex items-center justify-between w-full py-1 pl-5 text-gray-800 hover:text-gray-900 transition-colors"
       >
-        <span className="text-[13px]">{label}</span>
+        <span className="text-[13px] font-normal">{label}</span>
         <ChevronUp className={`w-3.5 h-3.5 text-gray-400 transition-transform ${isOpen ? '' : 'rotate-180'}`} />
       </button>
       
@@ -77,7 +77,7 @@ function SubSection({ label, items = [], defaultOpen = true, isLast = false, sho
         <div className="relative ml-5">
           {/* Continuing vertical line from parent */}
           {!isLast && showConnector && (
-            <div className="absolute -left-5 top-0 bottom-0 w-px bg-gray-200" />
+            <div className="absolute -left-5 top-0 bottom-0 w-px bg-gray-300" />
           )}
           
           {items.map((item, index) => (

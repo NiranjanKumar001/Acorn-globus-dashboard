@@ -44,7 +44,7 @@ const reportsItems = [
 // Empty state for non-dashboard navs
 function EmptyPanel({ title }) {
   return (
-    <div className="w-[200px] bg-white flex flex-col h-full">
+    <div className="w-[200px] bg-[#F4F0F0] flex flex-col h-full">
       <Logo />
       <div className="flex-1 flex items-center justify-center">
         <div className="text-center">
@@ -70,7 +70,7 @@ export default function SidebarPanel({ activeNav }) {
   }
 
   return (
-    <div className="w-[200px] bg-white flex flex-col h-full overflow-y-auto scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+    <div className="w-[200px] bg-[#F4F0F0] flex flex-col h-full overflow-y-auto scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       {/* Logo */}
       <Logo />
       
@@ -78,7 +78,7 @@ export default function SidebarPanel({ activeNav }) {
       <QuickLinks />
       
       {/* Main Nav Items */}
-      <div className="px-4 py-1">
+      <div className="px-4">
         <button className="w-full py-[6px] text-left text-[13px] font-semibold text-gray-800 hover:text-gray-600 transition-colors">
           Sales list
         </button>
