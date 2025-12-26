@@ -5,14 +5,14 @@ import { Menu } from 'lucide-react'
 
 export default function Header() {
     return (
-        <header className="h-16 bg-[#DED8D8] flex items-center justify-between px-6">
+        <header className="h-16 bg-[#F4F0F0] flex items-center justify-between ">
             {/* Left Section - Search */}
             <div className="flex items-center">
                 <SearchBar />
             </div>
 
             {/* Right Section - Menu, Profile, Add Button */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 ">
                 {/* Hamburger Menu */}
                 <div className='flex items-center gap-1 bg-white p-1 rounded-full'>
                     <button className="w-6 h-6 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors">

@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         <Header />
         
         {/* Page Content */}
-        <main className="flex-1 overflow-auto px-6 py-3">
+        <main className="flex-1 overflow-auto px-6 py-3 ">
           {children}
         </main>
       </div>

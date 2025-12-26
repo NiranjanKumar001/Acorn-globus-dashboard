@@ -14,15 +14,15 @@ export default function MenuItem({
       {hasLine && (
         <>
           {/* Vertical line */}
-          <div className={`absolute left-0 w-px bg-gray-300 ${isLast ? 'h-[14px] top-0' : 'h-full top-0'}`} />
+          <div className={`absolute left-0 w-px bg-gray-400 ${isLast ? 'h-[14px] top-0' : 'h-full top-0'}`} />
           {/* Horizontal line */}
-          <div className="absolute left-0 top-[14px] w-3 h-px bg-gray-300" />
+          <div className="absolute left-0 top-[14px] w-3 h-px bg-gray-400" />
         </>
       )}
       
       <button
         onClick={onClick}
-        className={`flex items-center justify-between w-full py-1 transition-colors ${hasLine ? 'pl-5' : ''} ${
+        className={`flex items-center justify-between w-full py-0.5 transition-colors ${hasLine ? 'pl-5' : ''} ${
           active 
             ? 'text-[#E11D48]' 
             : 'text-gray-800 hover:text-gray-900'
