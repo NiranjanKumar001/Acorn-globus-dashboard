@@ -3,7 +3,7 @@ import { TrendingUp } from 'lucide-react'
 
 export default function WorkWithPlatforms() {
   return (
-    <div className="bg-white rounded-2xl p-4">
+    <div className="bg-white rounded-2xl p-4 ">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-[13px] font-medium text-gray-800">Work with platforms</h3>
