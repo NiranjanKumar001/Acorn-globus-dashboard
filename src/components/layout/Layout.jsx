@@ -42,9 +42,8 @@ export default function Layout({ children }) {
 
       {/* Folder sidebar: visible as panel on desktop, toggled on mobile */}
       <div
-        className={`transition-all duration-300 ease-in-out overflow-hidden
-          ${showFolderSidebarMobile && typeof window !== 'undefined' && window.innerWidth < 768 ? 'fixed z-40 top-0 left-0 h-full w-[200px] block' : window.innerWidth >= 768 ? 'h-full block relative' : 'hidden'}`}
-        style={{ minWidth: 0 }}
+        className={`h-full transition-all duration-300 ease-in-out overflow-hidden ${showFolderSidebarMobile || typeof window === 'undefined' || window.innerWidth >= 768 ? 'block' : 'hidden'}`}
+        style={{ minWidth: 0, marginLeft: (showFolderSidebarMobile && (typeof window === 'undefined' || window.innerWidth < 768)) ? '24px' : '0' }}
       >
         <SidebarPanel
           activeNav={activeNav}
