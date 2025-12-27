@@ -63,14 +63,22 @@ export default function UserPerformance() {
   return (
     <div className="bg-white rounded-2xl p-1.5 h-full">
       {/* Header Row */}
-      <div className="flex items-center gap-4 mb-0 text-[12px] text-gray-400 font-medium">
-        <div className="w-[140px]">Sales</div>
-        <div className="w-[95px] text-left">Revenue</div>
-        <div className="w-[100px] text-center">Leads</div>
-        <div className="w-[50px] text-center">KPI</div>
-        <div className="w-[50px] text-center">W/L</div>
-        <div className="w-[70px]"></div>
-        <div className="w-[30px]"></div>
+      <div className="hidden sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] mb-0 text-[12px] text-gray-400 font-medium w-full">
+        <div>Sales</div>
+        <div className="text-left">Revenue</div>
+        <div className="text-center">Leads</div>
+        <div className="text-center">KPI</div>
+        <div className="text-center">W/L</div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className="sm:hidden flex items-center gap-4 mb-0 text-[12px] text-gray-400 font-medium">
+        <div className="w-[90px]">Sales</div>
+        <div className="w-[70px] text-left">Revenue</div>
+        <div className="w-[70px] text-center">Leads</div>
+        <div className="w-[40px] text-center">KPI</div>
+        <div className="w-[40px] text-center">W/L</div>
+        <div className="w-[60px]"></div>
       </div>
       
       {/* User Rows */}
@@ -82,22 +90,29 @@ export default function UserPerformance() {
               : 'bg-gray-50 rounded-2xl py-0.5 px-2 -mx-1 border border-gray-200'
           }`}>
             {/* Main Row */}
-            <div className="flex items-center gap-4">
+            <div className="sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] sm:items-center flex items-center sm:gap-0 gap-4 sm:justify-between w-full">
               {/* Avatar & Name */}
-              <div className="flex items-center gap-1.5 w-[140px]">
+              <div className="flex items-center gap-1.5 min-w-[90px] sm:min-w-[140px]">
                 <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
                   <img src={user.avatarImg} alt={user.name} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-[11px] font-medium text-gray-800">{user.name}</span>
+                <span className="hidden sm:inline text-[11px] font-medium text-gray-800">{user.name}</span>
               </div>
-              
+
               {/* Revenue */}
-              <div className="w-[95px]">
-                <span className="text-[11px] font-semibold text-gray-800">{user.revenue}</span>
+              <div className="min-w-[70px] sm:w-[95px]">
+                <span className="hidden sm:inline text-[11px] font-semibold text-gray-800">{user.revenue}</span>
+                <span className="inline sm:hidden text-[11px] font-semibold text-gray-800">
+                  {(() => {
+                    const num = Number(user.revenue.replace(/[^\d.]/g, ''));
+                    
+                    return num >= 1000 ? Math.round(num / 1000) + 'k' : user.revenue;
+                  })()}
+                </span>
               </div>
-              
+
               {/* Sales and Leads combined */}
-              <div className="w-[100px] flex items-center gap-1 justify-center">
+              <div className="min-w-[70px] sm:w-[100px] flex items-center gap-1 justify-center">
                 <span className={`w-6 h-6 rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[11px] font-semibold flex items-center justify-center`}>
                   {user.sales}
                 </span>
@@ -105,19 +120,19 @@ export default function UserPerformance() {
                   {user.leads}
                 </span>
               </div>
-              
+
               {/* KPI */}
-              <div className="w-[50px] text-center">
+              <div className="min-w-[40px] sm:w-[50px] flex justify-center">
                 <span className="text-[11px] text-gray-600">{user.kpi}</span>
               </div>
-              
+
               {/* Win Rate */}
-              <div className="w-[50px] text-center">
+              <div className="min-w-[40px] sm:w-[50px] flex justify-center">
                 <span className="text-[11px] text-gray-600">{user.winRate}</span>
               </div>
-              
+
               {/* W/L Boxes */}
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 min-w-[60px]">
                 <span className="w-6 h-6 rounded-lg bg-[#1F2937] text-white text-[11px] font-semibold flex items-center justify-center">
                   {user.wl.wins}
                 </span>
@@ -125,22 +140,24 @@ export default function UserPerformance() {
                   {user.wl.losses}
                 </span>
               </div>
-              
-              {/* Expand Button */}
-              <button 
-                onClick={() => setExpandedUser(expandedUser === user.id ? null : user.id)}
-                className={`w-7 h-7 rounded-full flex items-center justify-center ${
-                  expandedUser === user.id 
-                    ? 'bg-[#E11D48] text-white' 
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
-              >
-                {expandedUser === user.id ? (
-                  <ChevronUp className="w-4 h-4" />
-                ) : (
-                  <ChevronDown className="w-4 h-4" />
-                )}
-              </button>
+
+              {/* Expand Button - always at far right */}
+              <div className="flex-1 flex justify-end">
+                <button 
+                  onClick={() => setExpandedUser(expandedUser === user.id ? null : user.id)}
+                  className={`w-7 h-7 rounded-full flex items-center justify-center ${
+                    expandedUser === user.id 
+                      ? 'bg-[#E11D48] text-white' 
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  {expandedUser === user.id ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+              </div>
             </div>
             
             {/* Expanded Content for Mikasa */}
