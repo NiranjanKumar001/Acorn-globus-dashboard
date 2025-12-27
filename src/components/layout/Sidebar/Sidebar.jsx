@@ -16,7 +16,7 @@ export default function Sidebar({ activeReport, setActiveReport, activeNav, setA
         </div>
         {/* Folder sidebar (panel) */}
         {showPanel && (
-          <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isCollapsed ? 'w-0' : 'w-[200px]'}`}>
+          <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isCollapsed ? 'w-0' : 'w-[200px]'} ml-0 md:ml-0`} style={{ marginLeft: window.innerWidth < 768 ? '24px' : '0' }}>
             <SidebarPanel activeNav={activeNav} activeReport={activeReport} setActiveReport={setActiveReport} />
           </div>
         )}
