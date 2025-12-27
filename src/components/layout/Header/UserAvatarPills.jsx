@@ -10,7 +10,7 @@ const users = [
 
 export default function UserAvatarPills() {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
       {/* Add User Button */}
       <button className="w-8 h-8 rounded-full border-2 border border-gray-300 flex items-center justify-center hover:border-gray-400 transition-colors">
         <Plus className="w-4 h-4 text-black" strokeWidth={2} />
@@ -22,7 +22,6 @@ export default function UserAvatarPills() {
           key={user.id}
           className={`flex items-center gap-2 ${user.isLogo ? 'border border-gray-300 rounded-full p-1' : 'border border-gray-300 rounded-full pl-1 pr-3 py-1 cursor-pointer hover:bg-gray-200 transition-colors'}`}
         >
-          {/* Avatar Circle */}
           <div className={`w-5 h-5 rounded-full ${user.bgColor || ''} flex items-center justify-center overflow-hidden`}>
             {user.avatarImg ? (
               <img src={user.avatarImg} alt={user.name} className="w-full h-full object-cover" />
@@ -31,7 +30,6 @@ export default function UserAvatarPills() {
             )}
           </div>
           
-          {/* Name (if not logo) */}
           {!user.isLogo && (
             <span className="text-[13px] text-gray-700 font-medium">{user.name}</span>
           )}

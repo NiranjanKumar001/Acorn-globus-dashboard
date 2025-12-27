@@ -10,8 +10,8 @@ export default function RevenueCard() {
       {/* Main Value Row */}
       <div className="flex items-center gap-3 mb-1">
         <div className="flex items-baseline">
-          <span className="text-[36px] font-bold text-gray-900 tracking-tight">$528,976</span>
-          <span className="text-[36px] font-bold text-gray-300">.82</span>
+          <span className="text-[16px] sm:text-[36px] font-bold text-gray-900 tracking-tight">$528,976</span>
+          <span className="text-[12px] sm:text-[36px] font-bold text-gray-300">.82</span>
         </div>
         
         {/* Percentage Badge */}

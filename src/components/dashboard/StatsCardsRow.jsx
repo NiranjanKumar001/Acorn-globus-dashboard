@@ -8,17 +8,19 @@ import WinRateCard from './cards/WinRateCard'
 
 export default function StatsCardsRow() {
   return (
-    <div className="flex items-center justify-between mb-5">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between mb-5 gap-2">
       {/* Revenue Card - Takes more space */}
       <RevenueCard />
-      
       {/* Smaller Stats Cards */}
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
         <TopSalesCard />
         <BestDealCard />
-        <DealsCard />
-        <ValueCard isSelected={true} />
-        <WinRateCard />
+        {/* Deals, Value, WinRate always in a row */}
+        <div className="flex flex-row items-stretch gap-2 w-full sm:w-auto">
+          <DealsCard />
+          <ValueCard isSelected={true} />
+          <WinRateCard />
+        </div>
       </div>
     </div>
   )

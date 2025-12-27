@@ -30,20 +30,23 @@ const users = [
 
 export default function UserMetricsBar() {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
       {/* User Stats Pills */}
-      <div className="flex items-center gap-2 flex-1 min-w-0 bg-gray-100 rounded-full p-1">
-        {users.map((user) => (
-          <div 
-            key={user.id} 
-            className={`rounded-full flex items-center justify-between overflow-hidden ${
-              user.id === 4 ? 'bg-transparent px-2 py-1' : 'bg-white border border-gray-200 shadow-sm px-3 py-1.5'
-            }`}
-            style={{ width: user.percentage, minWidth: '160px' }}
-          >
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 min-w-0 sm:bg-gray-100 sm:w-full rounded-full p-1">
+        {users.map((user, idx) => (
+            <div
+              key={user.id}
+              className={`rounded-full flex items-center justify-between overflow-hidden ${
+                user.id === 4 ? 'bg-transparent px-2 py-1' : 'bg-white border border-gray-200 shadow-sm px-3 py-1.5'
+              } ${idx < 3 ? 'sm:[width:var(--tw-w)]' : ''}`}
+              style={{
+                minWidth: '160px',
+                ...(idx < 3 ? { width: undefined, ['--tw-w']: user.percentage } : {})
+              }}
+            >
             <div className="flex items-center gap-2">
               {/* Avatar */}
-              <div className={`${user.id === 4 ? 'w-7 h-7' : 'w-5 h-5'} rounded-full ${user.avatarBg || ''} flex items-center justify-center overflow-hidden flex-shrink-0`}>
+              <div className={`${user.id === 4 ? 'w-7 h-7' : 'w-5 h-5'} rounded-full ${user.avatarBg || ''} flex items-center justify-center overflow-hidden shrink-0`}>
                 {user.avatarImg ? (
                   <img src={user.avatarImg} alt="" className="w-full h-full object-cover" />
                 ) : user.avatarLetter && (
@@ -62,7 +65,7 @@ export default function UserMetricsBar() {
       </div>
       
       {/* Details Button */}
-      <button className="px-8 py-2.5 bg-[#1F2937] text-white text-[12px] font-medium rounded-full hover:bg-gray-700 transition-colors flex-shrink-0 tracking-wider">
+      <button className="px-8 py-2.5 bg-[#1F2937] text-white text-[12px] font-medium rounded-full hover:bg-gray-700 transition-colors shrink-0 tracking-wider w-full sm:w-auto order-last sm:order-none">
         Details
       </button>
     </div>
