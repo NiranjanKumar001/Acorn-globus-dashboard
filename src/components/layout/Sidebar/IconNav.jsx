@@ -14,6 +14,7 @@ const navItems = [
 function DashboardIcon({ active }) {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* No background, button's bg will show through */}
       <rect x="1" y="1" width="6" height="6" rx="1.5" fill={active ? "white" : "#1F2937"} />
       <rect x="11" y="1" width="6" height="6" rx="1.5" fill={active ? "white" : "#1F2937"} />
       <rect x="1" y="11" width="6" height="6" rx="1.5" fill={active ? "white" : "#1F2937"} />
@@ -39,7 +40,7 @@ export default function IconNav({ activeNav, setActiveNav }) {
               onClick={() => setActiveNav(item.id)}
               className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                 isActive 
-                  ? 'bg-[#E11D48] ' 
+                  ? 'bg-[#E11D48]' 
                   : 'bg-white'
               }`}
               title={item.label}

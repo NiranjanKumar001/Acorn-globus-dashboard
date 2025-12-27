@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { RxDragHandleDots2 } from 'react-icons/rx';
-import Sidebar from './Sidebar/Sidebar'
+import IconSidebar from './Sidebar/IconSidebar'
+import SidebarPanel from './Sidebar/SidebarPanel'
 import Header from './Header/Header'
 
 export default function Layout({ children }) {
@@ -33,16 +34,21 @@ export default function Layout({ children }) {
         </button>
       </div>
 
-      {/* Always show icon sidebar */}
+
+      {/* Icon sidebar: always visible */}
       <div className="h-full">
-        <Sidebar
+        <IconSidebar activeNav={activeNav} setActiveNav={setActiveNav} />
+      </div>
+
+      {/* Folder sidebar: visible as panel on desktop, toggled on mobile */}
+      <div
+        className={`h-full transition-all duration-300 ease-in-out overflow-hidden ${showFolderSidebarMobile || typeof window === 'undefined' || window.innerWidth >= 768 ? 'block' : 'hidden'}`}
+        style={{ minWidth: 0, marginLeft: (showFolderSidebarMobile && (typeof window === 'undefined' || window.innerWidth < 768)) ? '24px' : '0' }}
+      >
+        <SidebarPanel
+          activeNav={activeNav}
           activeReport={activeReport}
           setActiveReport={setActiveReport}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          isCollapsed={isSidebarCollapsed}
-          setIsCollapsed={setIsSidebarCollapsed}
-          showPanel={showFolderSidebarMobile || window.innerWidth >= 768}
         />
       </div>
 
