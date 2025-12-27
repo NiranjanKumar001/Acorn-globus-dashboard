@@ -30,7 +30,7 @@ export default function ReferrerChart() {
           <div key={bar.id} className="flex flex-col items-center justify-end">
             {/* Bar with diagonal stripes and embedded logo */}
             <div 
-              className="w-12 rounded-xl overflow-hidden relative border-2 border-white"
+              className="w-7 sm:w-12 rounded-xl overflow-hidden relative border-2 border-white"
               style={{ height: `${bar.height}px` }}
             >
               <div 

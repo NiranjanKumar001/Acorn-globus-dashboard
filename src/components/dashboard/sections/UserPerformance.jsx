@@ -67,17 +67,16 @@ export default function UserPerformance() {
         <div>Sales</div>
         <div className="text-left">Revenue</div>
         <div className="text-center">Leads</div>
-        <div className="text-center">KPI</div>
-        <div className="text-center">W/L</div>
-        <div></div>
+        <div className="text-center ml-10">KPI</div>
+        <div className="text-right ml-10">W/L</div>
         <div></div>
       </div>
-      <div className="sm:hidden flex items-center gap-4 mb-0 text-[12px] text-gray-400 font-medium">
-        <div className="w-[90px]">Sales</div>
+      <div className="sm:hidden flex items-center gap-2 mb-0 text-[12px] text-gray-400 font-medium">
+        <div className="w-[50px]">Sales</div>
         <div className="w-[70px] text-left">Revenue</div>
         <div className="w-[70px] text-center">Leads</div>
-        <div className="w-[40px] text-center">KPI</div>
-        <div className="w-[40px] text-center">W/L</div>
+        <div className="w-[40px] text-center ">KPI</div>
+        <div className="w-[40px] text-right">W/L</div>
         <div className="w-[60px]"></div>
       </div>
       
@@ -90,9 +89,9 @@ export default function UserPerformance() {
               : 'bg-gray-50 rounded-2xl py-0.5 px-2 -mx-1 border border-gray-200'
           }`}>
             {/* Main Row */}
-            <div className="sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] sm:items-center flex items-center sm:gap-0 gap-4 sm:justify-between w-full">
+            <div className="sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] sm:items-center flex items-center sm:gap-0 gap-5 sm:justify-between w-full">
               {/* Avatar & Name */}
-              <div className="flex items-center gap-1.5 min-w-[90px] sm:min-w-[140px]">
+              <div className="flex items-center sm:gap-1.5 gap-1 min-w-0 sm:min-w-[140px]">
                 <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
                   <img src={user.avatarImg} alt={user.name} className="w-full h-full object-cover" />
                 </div>
@@ -100,7 +99,7 @@ export default function UserPerformance() {
               </div>
 
               {/* Revenue */}
-              <div className="min-w-[70px] sm:w-[95px]">
+              <div className="sm:w-[95px] min-w-0">
                 <span className="hidden sm:inline text-[11px] font-semibold text-gray-800">{user.revenue}</span>
                 <span className="inline sm:hidden text-[11px] font-semibold text-gray-800">
                   {(() => {
@@ -112,7 +111,7 @@ export default function UserPerformance() {
               </div>
 
               {/* Sales and Leads combined */}
-              <div className="min-w-[70px] sm:w-[100px] flex items-center gap-1 justify-center">
+              <div className="sm:w-[100px] min-w-0 flex items-center sm:gap-1 gap-1 justify-center">
                 <span className={`w-6 h-6 rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[11px] font-semibold flex items-center justify-center`}>
                   {user.sales}
                 </span>
@@ -122,17 +121,17 @@ export default function UserPerformance() {
               </div>
 
               {/* KPI */}
-              <div className="min-w-[40px] sm:w-[50px] flex justify-center">
+              <div className="sm:w-[50px] min-w-0 flex justify-center">
                 <span className="text-[11px] text-gray-600">{user.kpi}</span>
               </div>
 
               {/* Win Rate */}
-              <div className="min-w-[40px] sm:w-[50px] flex justify-center">
+              <div className="sm:w-[50px] min-w-0 flex justify-center">
                 <span className="text-[11px] text-gray-600">{user.winRate}</span>
               </div>
 
-              {/* W/L Boxes */}
-              <div className="flex items-center gap-1 min-w-[60px]">
+              {/* W/L Boxes - only show on desktop/tablet */}
+              <div className="hidden sm:flex items-center gap-1 min-w-[60px]">
                 <span className="w-6 h-6 rounded-lg bg-[#1F2937] text-white text-[11px] font-semibold flex items-center justify-center">
                   {user.wl.wins}
                 </span>
@@ -145,16 +144,16 @@ export default function UserPerformance() {
               <div className="flex-1 flex justify-end">
                 <button 
                   onClick={() => setExpandedUser(expandedUser === user.id ? null : user.id)}
-                  className={`w-7 h-7 rounded-full flex items-center justify-center ${
+                  className={`w-4 h-4 rounded-full flex items-center justify-center ${
                     expandedUser === user.id 
                       ? 'bg-[#E11D48] text-white' 
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
                   {expandedUser === user.id ? (
-                    <ChevronUp className="w-4 h-4" />
+                    <ChevronUp className="w-2.5 h-2.5" />
                   ) : (
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-2.5 h-2.5" />
                   )}
                 </button>
               </div>
@@ -164,11 +163,11 @@ export default function UserPerformance() {
             {expandedUser === user.id && user.badges && (
               <div className="mt-0.5 pt-0.5 border-t border-gray-100">
                 {/* Badges */}
-                <div className="flex items-center gap-2 mb-1">
+                <div className="hidden sm:flex flex-row flex-nowrap items-center gap-2 mb-1">
                   {user.badges.map((badge, idx) => (
                     <span 
                       key={idx}
-                      className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-[11px] text-gray-600 font-medium flex items-center gap-1 leading-none"
+                      className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-[11px] text-gray-600 font-medium flex items-center gap-1 leading-none whitespace-nowrap"
                     >
                       {badge.label}
                       <span>{badge.emoji}</span>
@@ -185,7 +184,8 @@ export default function UserPerformance() {
                         <TrendingUp className="w-3 h-3" />
                         3
                       </span>
-                      <span className="text-[11px] font-bold text-white bg-[#E11D48] px-2 py-0.5 rounded-full">$156,841</span>
+                      <span className="hidden sm:inline text-[11px] font-bold text-white bg-[#E11D48] px-2 py-0.5 rounded-full">$156,841</span>
+                      <span className="inline sm:hidden text-[11px] font-bold text-white bg-[#E11D48] px-2 py-0.5 rounded-full">156k</span>
                     </div>
                   </div>
                   
