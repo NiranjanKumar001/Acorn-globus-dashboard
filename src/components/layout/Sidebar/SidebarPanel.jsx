@@ -35,7 +35,7 @@ const reportsItems = [
     items: [
       { label: 'Emails received' },
       { label: 'Deal duration' },
-      { label: 'New report', active: true },
+      { label: 'New report' },
       { label: 'Analytics', badge: 7 },
     ]
   },
@@ -56,7 +56,7 @@ function EmptyPanel({ title }) {
   )
 }
 
-export default function SidebarPanel({ activeNav }) {
+export default function SidebarPanel({ activeNav, activeReport, setActiveReport }) {
   // Show empty panel for non-dashboard navs
   if (activeNav !== 'dashboard') {
     const titles = {
@@ -91,14 +91,18 @@ export default function SidebarPanel({ activeNav }) {
       <MenuSection 
         title="Dashboard" 
         items={dashboardItems} 
-        showAddButton 
+        showAddButton
+        activeReport={activeReport}
+        setActiveReport={setActiveReport}
       />
       
       {/* Reports Section */}
       <MenuSection 
         title="Reports" 
         items={reportsItems} 
-        showAddButton 
+        showAddButton
+        activeReport={activeReport}
+        setActiveReport={setActiveReport}
       />
       
       {/* Footer */}

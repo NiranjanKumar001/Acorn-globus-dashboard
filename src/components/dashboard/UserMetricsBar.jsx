@@ -3,22 +3,19 @@ import React from 'react'
 const users = [
   { 
     id: 1, 
-    avatarBg: 'bg-gray-300',
-    avatarImage: true,
+    avatarImg: '/Armin.png',
     value: '$209,633', 
     percentage: '39.63%', 
   },
   { 
     id: 2, 
-    avatarBg: 'bg-[#3B82F6]',
-    avatarEmoji: '🦊',
+    avatarImg: '/Mikasa.png',
     value: '$156,841', 
     percentage: '29.65%', 
   },
   { 
     id: 3, 
-    avatarBg: 'bg-[#10B981]',
-    avatarLetter: 'M',
+    avatarImg: '/Eren.png',
     value: '$117,115', 
     percentage: '22.14%', 
   },
@@ -33,41 +30,41 @@ const users = [
 
 export default function UserMetricsBar() {
   return (
-    <div className="bg-white rounded-2xl px-6 py-4">
-      {/* User Stats Row */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-10">
-          {users.map((user) => (
-            <div key={user.id} className="flex items-center gap-2.5">
+    <div className="flex items-center gap-3">
+      {/* User Stats Pills */}
+      <div className="flex items-center gap-2 flex-1 min-w-0 bg-gray-100 rounded-full p-1">
+        {users.map((user) => (
+          <div 
+            key={user.id} 
+            className={`rounded-full flex items-center justify-between overflow-hidden ${
+              user.id === 4 ? 'bg-transparent px-2 py-1' : 'bg-white border border-gray-200 shadow-sm px-3 py-1.5'
+            }`}
+            style={{ width: user.percentage, minWidth: '160px' }}
+          >
+            <div className="flex items-center gap-2">
               {/* Avatar */}
-              <div className={`w-8 h-8 rounded-full ${user.avatarBg} flex items-center justify-center overflow-hidden`}>
-                {user.avatarImage && (
-                  <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                )}
-                {user.avatarEmoji && (
-                  <span className="text-sm">{user.avatarEmoji}</span>
-                )}
-                {user.avatarLetter && (
-                  <span className="text-[11px] font-bold text-white">{user.avatarLetter}</span>
+              <div className={`${user.id === 4 ? 'w-7 h-7' : 'w-5 h-5'} rounded-full ${user.avatarBg || ''} flex items-center justify-center overflow-hidden flex-shrink-0`}>
+                {user.avatarImg ? (
+                  <img src={user.avatarImg} alt="" className="w-full h-full object-cover" />
+                ) : user.avatarLetter && (
+                  <span className={`${user.id === 4 ? 'text-[10px]' : 'text-[8px]'} font-bold text-white`}>{user.avatarLetter}</span>
                 )}
               </div>
               
               {/* Value */}
-              <span className="text-[14px] font-semibold text-gray-800">{user.value}</span>
-              
-              {/* Percentage */}
-              <span className="text-[14px] text-gray-400">{user.percentage}</span>
+              <span className={`${user.id === 4 ? 'text-[14px]' : 'text-[12px]'} font-semibold text-gray-900`}>{user.value}</span>
             </div>
-          ))}
-        </div>
-        
-        {/* Details Button */}
-        <button className="px-6 py-2.5 bg-[#1F2937] text-white text-[13px] font-medium rounded-full hover:bg-gray-700 transition-colors">
-          Details
-        </button>
+            
+            {/* Percentage */}
+            <span className={`${user.id === 4 ? 'text-[13px]' : 'text-[11px]'} text-gray-400 font-medium`}>{user.percentage}</span>
+          </div>
+        ))}
       </div>
+      
+      {/* Details Button */}
+      <button className="px-8 py-2.5 bg-[#1F2937] text-white text-[12px] font-medium rounded-full hover:bg-gray-700 transition-colors flex-shrink-0 tracking-wider">
+        Details
+      </button>
     </div>
   )
 }

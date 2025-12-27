@@ -20,7 +20,9 @@ export default function App() {
       <StatsCardsRow />
       
       {/* User Metrics Bar */}
-      <UserMetricsBar />
+      <div className="mb-5">
+        <UserMetricsBar />
+      </div>
       
       {/* Three Column Section */}
       <ThreeColumnSection />

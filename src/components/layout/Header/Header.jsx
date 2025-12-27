@@ -19,8 +19,9 @@ export default function Header() {
                         <Menu className="w-4 h-4 text-black" strokeWidth={1.5} />
                     </button>
 
-                    {/* Profile Avatar - Gradient egg/sunset */}
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-b from-[#FEF3C7] via-[#FDBA74] to-[#F97316] cursor-pointer">
+                    {/* Profile Avatar */}
+                    <div className="w-6 h-6 rounded-full overflow-hidden cursor-pointer">
+                        <img src="/Profile.png" alt="Profile" className="w-full h-full object-cover" />
                     </div>
                 </div>
 

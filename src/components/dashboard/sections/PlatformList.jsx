@@ -30,39 +30,39 @@ const platforms = [
 
 export default function PlatformList() {
   return (
-    <div className="bg-[#F5F5F5] rounded-2xl p-5 h-full">
+    <div className="bg-[#F5F5F5] rounded-2xl p-2 h-full">
       {/* Header */}
-      <div className="flex items-center justify-between mb-5">
+      <div className="flex items-center justify-between mb-1">
         <button className="flex items-center gap-1 text-gray-500">
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="12" x2="14" y2="12" />
             <line x1="4" y1="18" x2="8" y2="18" />
           </svg>
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-3.5 h-3.5" />
         </button>
-        <button className="flex items-center gap-2 text-[13px] text-gray-600 border border-gray-300 rounded-full px-4 py-1.5 bg-white hover:bg-gray-50">
+        <button className="flex items-center gap-2 text-[12px] text-gray-600 border border-gray-300 rounded-full px-4 py-1 hover:bg-gray-50">
           Filters
-          <ListFilter className="w-4 h-4" />
+          <ListFilter className="w-3.5 h-3.5" />
         </button>
       </div>
       
       {/* Platform Items */}
-      <div className="space-y-3">
+      <div className="space-y-1">
         {platforms.map((platform) => (
-          <div key={platform.id} className="flex items-center justify-between bg-white rounded-xl px-3 py-2.5">
-            <div className="flex items-center gap-3">
+          <div key={platform.id} className="flex items-center bg-white rounded-xl px-2 py-1.5">
+            <div className="flex items-center gap-2 flex-1">
               {/* Icon */}
               {platform.name === 'Dribbble' && (
-                <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#EA4C89]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.5a10.18 10.18 0 012.312 6.375c-.337-.063-3.687-.75-7.062-.313-.063-.125-.125-.25-.188-.375-.187-.438-.375-.875-.625-1.313 3.75-1.5 5.375-3.687 5.563-4.375zM12 1.75c2.75 0 5.25 1.063 7.125 2.75-.125.625-1.562 2.625-5.125 4-1.563-2.875-3.313-5.25-3.563-5.562A10.3 10.3 0 0112 1.75z"/>
+                <div className="w-6 h-6 rounded-full bg-pink-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-[#EA4C89]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.5a10.18 10.18 0 012.312 6.375c-.337-.063-3.687-.75-7.062-.313-.063-.125-.125-.25-.188-.375-.187-.438-.375-.875-.625-1.313 3.75-1.5 5.375-3.687 5.563-4.375zM12 1.75c2.75 0 5.25 1.063 7.125 2.75-.125.625-1.562 2.625-5.125 4-1.563-2.875-3.313-5.25-3.563-5.562A10.3 10.3 0 0112 1.75zM8.5 3.625c.25.313 1.938 2.688 3.5 5.5-4.437 1.188-8.313 1.125-8.75 1.125.625-2.875 2.562-5.313 5.25-6.625zM1.75 12v-.313c.438.013 5 .063 9.75-1.375.25.5.5 1.063.75 1.563-.125.063-.313.063-.438.125-4.937 1.625-7.5 6-7.687 6.312A10.19 10.19 0 011.75 12zm10.25 10.25c-2.375 0-4.562-.812-6.312-2.187.125-.313 2.063-4.063 7.438-5.938l.063-.063c1.375 3.5 1.938 6.438 2.063 7.25a10.14 10.14 0 01-3.25.938zm5-1.688c-.125-.562-.625-3.375-1.875-6.812 3.187-.5 6 .375 6.375.5a10.22 10.22 0 01-4.5 6.313z"/>
                   </svg>
                 </div>
               )}
               {platform.name === 'Instagram' && (
-                <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
+                <div className="w-6 h-6 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#FFDC80"/>
@@ -77,13 +77,13 @@ export default function PlatformList() {
                 </div>
               )}
               {platform.name === 'Behance' && (
-                <div className="w-8 h-8 rounded-lg bg-[#1769FF] flex items-center justify-center">
-                  <span className="text-[11px] font-bold text-white">Bē</span>
+                <div className="w-6 h-6 rounded-lg bg-[#1769FF] flex items-center justify-center">
+                  <span className="text-[9px] font-bold text-white">Bē</span>
                 </div>
               )}
               {platform.name === 'Google' && (
-                <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
+                <div className="w-6 h-6 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -93,13 +93,15 @@ export default function PlatformList() {
               )}
               
               {/* Name */}
-              <span className="text-[14px] font-medium text-gray-800">{platform.name}</span>
+              <span className="text-[13px] font-medium text-gray-800">{platform.name}</span>
             </div>
             
             {/* Amount & Percentage */}
-            <div className="flex items-center gap-2">
-              <span className="text-[14px] font-semibold text-gray-800">{platform.amount}</span>
-              <span className="text-[13px] text-gray-400">{platform.percentage}</span>
+            <div className="flex items-center gap-3">
+              <span className="text-[13px] font-semibold text-gray-800">{platform.amount}</span>
+              <div className="bg-gray-200 rounded-full px-2">
+                <span className="text-[12px] font-medium text-gray-900">{platform.percentage}</span>
+              </div>
             </div>
           </div>
         ))}

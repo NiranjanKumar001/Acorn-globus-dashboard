@@ -7,7 +7,9 @@ export default function MenuSection({
   title, 
   items = [], 
   defaultOpen = true,
-  showAddButton = false 
+  showAddButton = false,
+  activeReport,
+  setActiveReport
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
@@ -34,10 +36,14 @@ export default function MenuSection({
                   {...item} 
                   isLast={index === items.length - 1}
                   showConnector
+                  activeReport={activeReport}
+                  setActiveReport={setActiveReport}
                 />
               ) : (
                 <MenuItem 
-                  {...item} 
+                  {...item}
+                  active={activeReport === item.label}
+                  onClick={() => setActiveReport(item.label)}
                   hasLine 
                   isLast={index === items.length - 1}
                 />
@@ -50,7 +56,7 @@ export default function MenuSection({
   )
 }
 
-function SubSection({ label, items = [], defaultOpen = true, isLast = false, showConnector = false }) {
+function SubSection({ label, items = [], defaultOpen = true, isLast = false, showConnector = false, activeReport, setActiveReport }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
@@ -83,7 +89,9 @@ function SubSection({ label, items = [], defaultOpen = true, isLast = false, sho
           {items.map((item, index) => (
             <MenuItem 
               key={index} 
-              {...item} 
+              {...item}
+              active={activeReport === item.label}
+              onClick={() => setActiveReport(item.label)}
               hasLine 
               isLast={index === items.length - 1}
             />

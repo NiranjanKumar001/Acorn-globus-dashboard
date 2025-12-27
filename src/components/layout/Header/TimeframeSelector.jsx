@@ -26,9 +26,9 @@ export default function TimeframeSelector() {
       </div>
       
       {/* Date Range Dropdown */}
-      <button className="flex items-center gap-2 px-4 py-1.5 bg-white border border-[#E5E7EB] rounded-full text-[13px] font-medium text-[#374151] hover:border-gray-300 transition-colors">
+      <button className="flex items-center gap-2 px-3 py-1 bg-gray-200 border border-[#E5E7EB] rounded-full text-xs font-medium text-[#374151] hover:border-gray-300 transition-colors">
         <span>Sep 1 - Nov 30, 2023</span>
-        <ChevronDown className="w-4 h-4 text-gray-400" strokeWidth={2} />
+        <ChevronDown className="w-3.5 h-3.5 text-gray-400" strokeWidth={2} />
       </button>
     </div>
   )

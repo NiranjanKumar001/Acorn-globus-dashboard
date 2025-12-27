@@ -13,7 +13,7 @@ export default function StatsCardsRow() {
       <RevenueCard />
       
       {/* Smaller Stats Cards */}
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <TopSalesCard />
         <BestDealCard />
         <DealsCard />

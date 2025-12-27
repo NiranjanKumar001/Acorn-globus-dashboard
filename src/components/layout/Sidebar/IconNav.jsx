@@ -24,7 +24,7 @@ function DashboardIcon({ active }) {
 
 export default function IconNav({ activeNav, setActiveNav }) {
   return (
-    <div className="flex flex-col items-center pt-4 pb-2 pl-3">
+    <div className="flex flex-col items-center pt-4 pb-2">
       {/* Logo at top */}
       <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center mb-10">
         <span className="text-white font-bold text-xl">C</span>

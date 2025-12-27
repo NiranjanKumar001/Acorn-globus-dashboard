@@ -1,32 +1,32 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 
 const barData = [
   { 
     month: 'Sep', 
     value: 6901, 
     bars: [
-      { height: 100, avatar: 'bg-gray-300' },
-      { height: 65, avatar: 'bg-blue-500', border: true },
-      { height: 50, avatar: 'bg-gray-300' }
+      { height: 45, avatarImg: '/Armin.png' },
+      { height: 30, avatarImg: '/Mikasa.png', border: true },
+      { height: 22, avatarImg: '/Eren.png' }
     ]
   },
   { 
     month: 'Oct', 
     value: 11035, 
     bars: [
-      { height: 120, avatar: 'bg-gray-300' },
-      { height: 150, avatar: 'bg-green-500', border: true },
-      { height: 95, avatar: 'bg-orange-400' }
+      { height: 55, avatarImg: '/Armin.png' },
+      { height: 65, avatarImg: '/Mikasa.png', border: true },
+      { height: 42, avatarImg: '/Eren.png' }
     ]
   },
   { 
     month: 'Nov', 
     value: 9288, 
     bars: [
-      { height: 85, avatar: 'bg-gray-300' },
-      { height: 130, avatar: 'bg-blue-500', border: true },
-      { height: 75, avatar: 'bg-orange-400' }
+      { height: 42, avatarImg: '/Armin.png' },
+      { height: 58, avatarImg: '/Mikasa.png', border: true },
+      { height: 30, avatarImg: '/Eren.png' }
     ]
   },
 ]
@@ -34,16 +34,19 @@ const barData = [
 const tabs = ['Revenue', 'Leads', 'W/L']
 
 export default function RevenueBarChart() {
+  const [activeTab, setActiveTab] = useState(0)
+  
   return (
-    <div className="bg-white rounded-2xl p-5 h-full">
+    <div className="bg-transparent rounded-2xl p-1.5 h-full">
       {/* Tabs at top right */}
-      <div className="flex justify-end mb-4">
-        <div className="flex items-center gap-1 bg-gray-100 rounded-full p-1">
+      <div className="flex justify-end mb-1">
+        <div className="flex items-center gap-1 bg-gray-100 rounded-full p-0.5">
           {tabs.map((tab, index) => (
             <button
               key={tab}
-              className={`px-5 py-2 rounded-full text-[13px] font-medium transition-colors ${
-                index === 0
+              onClick={() => setActiveTab(index)}
+              className={`px-3 py-1 rounded-full text-[10px] font-medium transition-colors ${
+                index === activeTab
                   ? 'bg-[#1F2937] text-white'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
@@ -57,13 +60,13 @@ export default function RevenueBarChart() {
       {/* Chart Container */}
       <div className="flex">
         {/* Chart Area */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col mt-10">
           {/* Bars Area */}
-          <div className="flex items-end justify-around px-2 pb-10">
+          <div className="flex items-end justify-around px-2 pb-2">
             {barData.map((group) => (
               <div key={group.month} className="flex flex-col items-center">
                 {/* Value Label */}
-                <div className="text-[11px] font-semibold px-2.5 py-1 rounded-lg mb-2 bg-[#E11D48] text-white">
+                <div className="text-[9px] font-semibold px-2 py-0.5 rounded-lg mb-1 bg-[#E11D48] text-white">
                   ${group.value.toLocaleString()}
                 </div>
                 
@@ -73,7 +76,7 @@ export default function RevenueBarChart() {
                     <div key={barIdx} className="flex flex-col items-center">
                       {/* Bar */}
                       <div 
-                        className="w-6 rounded-xl overflow-hidden"
+                        className="w-5 rounded-xl overflow-hidden"
                         style={{ height: `${bar.height}px` }}
                       >
                         <div 
@@ -91,8 +94,10 @@ export default function RevenueBarChart() {
                       </div>
                       {/* Avatar below bar */}
                       <div
-                        className={`w-6 h-6 rounded-full ${bar.avatar} ${bar.border ? 'ring-2 ring-blue-400' : ''} border-2 border-white mt-1`}
-                      />
+                        className="w-6 h-6 rounded-full border-2 border-white mt-1 overflow-hidden"
+                      >
+                        <img src={bar.avatarImg} alt="" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -109,7 +114,7 @@ export default function RevenueBarChart() {
         </div>
         
         {/* Y-Axis Labels on right */}
-        <div className="flex flex-col justify-between text-[11px] text-gray-300 py-2 pl-3 h-[180px]">
+        <div className="flex flex-col justify-between text-[11px] text-gray-500 py-0 pl-3 h-[120px]">
           <span>$14,500</span>
           <span>$11,000</span>
           <span>$7,500</span>

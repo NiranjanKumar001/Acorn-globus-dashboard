@@ -3,17 +3,23 @@ import { Heart } from 'lucide-react'
 
 export default function DealsCard() {
   return (
-    <div className="px-5 py-4 min-w-[70px]">
+    <div className="px-4 py-2 min-w-[70px] text-center border-2 border-gray-300 rounded-2xl bg-white">
       {/* Label */}
-      <p className="text-[12px] text-gray-400 mb-1.5">Deals</p>
+      <p className="text-[12px] text-gray-500 mb-1.5 font-medium">Deals</p>
       
-      {/* Value */}
-      <p className="text-[28px] font-bold text-gray-300 mb-3">256</p>
+      {/* Value in pill */}
+      <div className="flex justify-center mb-1.5">
+        <div className="inline-block px-2 py-0.5 bg-gray-200 rounded-full">
+          <p className="text-[14px] font-bold text-gray-800">256</p>
+        </div>
+      </div>
       
       {/* Heart indicator */}
-      <div className="flex items-center gap-1.5">
-        <Heart className="w-3.5 h-3.5 text-[#E11D48] fill-[#E11D48]" />
-        <span className="text-[12px] text-gray-600 font-medium">5</span>
+      <div className="flex items-center gap-1">
+        <svg className="w-3 h-3 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 12l-3 3-3-3h6z" />
+        </svg>
+        <span className="text-[13px] text-gray-800 font-semibold">5</span>
       </div>
     </div>
   )

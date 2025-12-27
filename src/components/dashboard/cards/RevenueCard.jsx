@@ -5,7 +5,7 @@ export default function RevenueCard() {
   return (
     <div className="flex-shrink-0">
       {/* Revenue Label */}
-      <p className="text-[14px] font-medium text-gray-800 mb-1">Revenue</p>
+      <p className="text-[14px] font-medium text-gray-800 mb-1 tracking-wider">Revenue</p>
       
       {/* Main Value Row */}
       <div className="flex items-center gap-3 mb-1">
@@ -15,21 +15,21 @@ export default function RevenueCard() {
         </div>
         
         {/* Percentage Badge */}
-        <span className="flex items-center gap-0.5 bg-[#FEE2E2] text-[#E11D48] text-[12px] font-semibold px-2 py-1 rounded-lg">
+        <span className="flex items-center gap-0.5 bg-[#D62C56] text-white text-[12px] font-semibold px-2 py-1 rounded-full">
           <TrendingUp className="w-3.5 h-3.5" />
           7.9%
         </span>
         
         {/* Green Amount */}
-        <span className="text-[15px] font-semibold text-[#22C55E] bg-[#DCFCE7] px-2 py-1 rounded-lg">$27,335.09</span>
+        <span className="text-[12px] font-semibold text-white bg-[#D62C56] px-2 py-1 rounded-full">$27,335.09</span>
       </div>
       
       {/* Comparison Text */}
-      <button className="flex items-center gap-1 text-[13px] text-gray-400 hover:text-gray-600">
+      <button className="flex items-center gap-1 text-[13px] text-gray-700 hover:text-gray-600">
         <span>vs prev.</span>
-        <span className="text-gray-600 font-medium">$501,641.73</span>
-        <span className="text-gray-400">Jun 1 - Aug 31, 2023</span>
-        <ChevronDown className="w-4 h-4 text-gray-400" />
+        <span className="text-gray-800 font-medium">$501,641.73</span>
+        <span className="text-gray-800">Jun 1 - Aug 31, 2023</span>
+        <ChevronDown className="w-4 h-4 text-gray-800" />
       </button>
     </div>
   )

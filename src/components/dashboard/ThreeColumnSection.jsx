@@ -11,7 +11,7 @@ export default function ThreeColumnSection() {
       {/* Row 1: Platform List + Referrer Chart | User Performance */}
       <div className="grid grid-cols-12 gap-4 mb-4">
         {/* Left Column */}
-        <div className="col-span-6 flex flex-col gap-4">
+        <div className="col-span-6 flex flex-col gap-2">
           {/* Top Row: Platform List + Referrer Chart */}
           <div className="grid grid-cols-2 gap-4">
             <PlatformList />
@@ -19,7 +19,7 @@ export default function ThreeColumnSection() {
           </div>
           
           {/* Bottom Row: Platform Value + Revenue Bar Chart */}
-          <div className="grid grid-cols-12 gap-4">
+          <div className="grid grid-cols-12 gap-4 bg-[#F5F5F5] rounded-2xl p-1.5 pb-0 pl-0">
             <div className="col-span-4">
               <PlatformValueCard />
             </div>
