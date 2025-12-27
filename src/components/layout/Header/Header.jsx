@@ -21,9 +21,9 @@ export default function Header() {
                     <button className="w-6 h-6 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
                         <Menu className="w-4 h-4 text-black" strokeWidth={1.5} />
                     </button>
-                <div className="w-6 h-6 rounded-full overflow-hidden cursor-pointer">
-                    <img src="/Profile.png" alt="Profile" className="w-full h-full object-cover" />
-                </div>
+                    <div className="w-6 h-6 rounded-full overflow-hidden cursor-pointer">
+                        <img src="/Profile.png" alt="Profile" className="w-full h-full object-cover" />
+                    </div>
                 </div>
                 {/* Profile Avatar */}
                 {/* Add Button */}
