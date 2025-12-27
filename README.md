@@ -1,10 +1,8 @@
 
-# 📌 IMPORTANT NOTICE
-
 # 🚨 🚨 🚨  
 # **LAST DATE OF SUBMISSION: 27 DECEMBER**  
 # 🚨 🚨 🚨
-
+(as per college) 
 ---
 
 ## 📄 Submission Guidelines
