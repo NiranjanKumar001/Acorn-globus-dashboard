@@ -8,8 +8,24 @@ import RevenueBarChart from './sections/RevenueBarChart'
 export default function ThreeColumnSection() {
   return (
     <>
-      {/* Row 1: Platform List + Referrer Chart | User Performance */}
-      <div className="grid grid-cols-12 gap-4 mb-4">
+      {/* Mobile: Stack PlatformList, ReferrerChart, PlatformValueCard, RevenueBarChart; Desktop: original grid */}
+      <div className="block sm:hidden w-full">
+        <div className="flex flex-col gap-3">
+          <PlatformList />
+          <ReferrerChart />
+          <PlatformValueCard />
+          <div className="w-full flex justify-start sm:justify-center -ml-4 sm:ml-0">
+            <div className="w-full px-2 sm:max-w-none sm:px-0">
+              <RevenueBarChart />
+            </div>
+          </div>
+        </div>
+        <div className="mt-4">
+          <UserPerformance />
+        </div>
+      </div>
+
+      <div className="hidden sm:grid grid-cols-12 gap-4 mb-4">
         {/* Left Column */}
         <div className="col-span-6 flex flex-col gap-2">
           {/* Top Row: Platform List + Referrer Chart */}
@@ -17,7 +33,6 @@ export default function ThreeColumnSection() {
             <PlatformList />
             <ReferrerChart />
           </div>
-          
           {/* Bottom Row: Platform Value + Revenue Bar Chart */}
           <div className="grid grid-cols-12 gap-4 bg-[#F5F5F5] rounded-2xl p-1.5 pb-0 pl-0">
             <div className="col-span-4">
@@ -28,7 +43,6 @@ export default function ThreeColumnSection() {
             </div>
           </div>
         </div>
-        
         {/* Right Column - User Performance */}
         <div className="col-span-6">
           <UserPerformance />

@@ -114,11 +114,24 @@ export default function RevenueBarChart() {
         </div>
         
         {/* Y-Axis Labels on right */}
-        <div className="flex flex-col justify-between text-[11px] text-gray-500 py-0 pl-3 h-[120px]">
-          <span>$14,500</span>
-          <span>$11,000</span>
-          <span>$7,500</span>
-          <span>$4,000</span>
+        <div className="flex flex-col justify-between text-[11px] text-gray-500 py-0 pl-0 sm:pl-3 h-[120px]">
+          {/* Desktop: full values, Mobile: short values */}
+          <span>
+            <span className="hidden sm:inline">$14,500</span>
+            <span className="inline sm:hidden">14k</span>
+          </span>
+          <span>
+            <span className="hidden sm:inline">$11,000</span>
+            <span className="inline sm:hidden">11k</span>
+          </span>
+          <span>
+            <span className="hidden sm:inline">$7,500</span>
+            <span className="inline sm:hidden">7k</span>
+          </span>
+          <span>
+            <span className="hidden sm:inline">$4,000</span>
+            <span className="inline sm:hidden">4k</span>
+          </span>
         </div>
       </div>
     </div>
