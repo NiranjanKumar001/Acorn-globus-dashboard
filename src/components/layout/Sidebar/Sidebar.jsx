@@ -18,17 +18,7 @@ export default function Sidebar({ activeReport, setActiveReport, activeNav, setA
         <SidebarPanel activeNav={activeNav} activeReport={activeReport} setActiveReport={setActiveReport} />
       </div>
       
-      {/* Collapse/Expand Button */}
-      <button
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-20 border border-gray-200"
-      >
-        {isCollapsed ? (
-          <PanelLeft className="w-3.5 h-3.5 text-gray-600" />
-        ) : (
-          <PanelLeftClose className="w-3.5 h-3.5 text-gray-600" />
-        )}
-      </button>
+      {/* ...existing code... */}
     </aside>
   )
 }
