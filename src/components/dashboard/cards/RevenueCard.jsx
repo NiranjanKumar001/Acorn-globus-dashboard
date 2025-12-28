@@ -25,7 +25,7 @@ export default function RevenueCard() {
       </div>
       
       {/* Comparison Text */}
-      <button className="flex items-center gap-1 text-[13px] text-gray-700 hover:text-gray-600">
+      <button className="flex items-center space-x-0.5 gap-1 text-[11px] sm:text-[13px] text-gray-700 hover:text-gray-600">
         <span>vs prev.</span>
         <span className="text-gray-800 font-medium">$501,641.73</span>
         <span className="text-gray-800">Jun 1 - Aug 31, 2023</span>
