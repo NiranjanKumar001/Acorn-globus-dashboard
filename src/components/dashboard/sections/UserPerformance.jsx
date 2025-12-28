@@ -112,7 +112,7 @@ export default function UserPerformance() {
 
               {/* Sales and Leads combined */}
               <div className="sm:w-[100px] min-w-0 flex items-center sm:gap-1 gap-1 justify-center">
-                <span className={`w-6 h-6 rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[11px] font-semibold flex items-center justify-center`}>
+                <span className={`w-5 h-5 sm:w-6 sm:h-6 rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[9px] sm:text-[11px] font-semibold flex items-center justify-center`}>
                   {user.sales}
                 </span>
                 <span className="w-6 h-6 rounded-lg bg-gray-100 text-gray-600 text-[11px] font-semibold flex items-center justify-center">

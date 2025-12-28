@@ -37,7 +37,7 @@ export default function Layout({ children }) {
 
 
       {/* Icon sidebar: always visible */}
-      <div className="h-full">
+      <div className="h-full ">
         <IconSidebar activeNav={activeNav} setActiveNav={setActiveNav} />
       </div>
 
