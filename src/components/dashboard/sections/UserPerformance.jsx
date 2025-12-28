@@ -63,7 +63,7 @@ export default function UserPerformance() {
   return (
     <div className="bg-white rounded-2xl p-1.5 h-full">
       {/* Header Row */}
-      <div className="hidden sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] mb-0 text-[12px] text-gray-400 font-medium w-full">
+      <div className="hidden sm:grid sm:grid-cols-[140px_95px_100px_50px_50px_70px_30px] mb-0 text-[12px] text-gray-600 font-medium w-full">
         <div>Sales</div>
         <div className="text-left">Revenue</div>
         <div className="text-center">Leads</div>
@@ -71,7 +71,7 @@ export default function UserPerformance() {
         <div className="text-right ml-10">W/L</div>
         <div></div>
       </div>
-      <div className="sm:hidden flex items-center gap-2 mb-0 text-[12px] text-gray-400 font-medium">
+      <div className="sm:hidden flex items-center gap-2 mb-0 text-[12px] text-gray-600 font-medium">
         <div className="w-[50px]">Sales</div>
         <div className="w-[70px] text-left">Revenue</div>
         <div className="w-[70px] text-center">Leads</div>
