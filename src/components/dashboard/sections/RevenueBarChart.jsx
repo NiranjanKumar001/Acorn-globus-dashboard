@@ -76,7 +76,7 @@ export default function RevenueBarChart() {
                     <div key={barIdx} className="flex flex-col items-center">
                       {/* Bar */}
                       <div 
-                        className="w-4 sm:w-5 rounded-xl overflow-hidden"
+                        className="w-4 sm:w-8 rounded-xl overflow-hidden"
                         style={{ height: `${bar.height}px` }}
                       >
                         <div 
