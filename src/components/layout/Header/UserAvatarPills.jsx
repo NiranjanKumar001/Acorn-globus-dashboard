@@ -12,7 +12,7 @@ export default function UserAvatarPills() {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
       {/* Add User Button */}
-      <button className="w-8 h-8 rounded-full border-2 border border-gray-300 flex items-center justify-center hover:border-gray-400 transition-colors">
+      <button className="w-8 h-8 rounded-full sm:border-2 border-1 border-gray-300 flex items-center justify-center hover:border-gray-400 transition-colors">
         <Plus className="w-4 h-4 text-black" strokeWidth={2} />
       </button>
       

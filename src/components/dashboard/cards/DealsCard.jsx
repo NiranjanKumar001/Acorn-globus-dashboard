@@ -3,7 +3,7 @@ import { Heart } from 'lucide-react'
 
 export default function DealsCard() {
   return (
-    <div className="px-4 py-2 min-w-[70px] text-center border-2 border-gray-300 rounded-2xl bg-white">
+    <div className="px-4 py-2 min-w-[70px] text-center border-1 sm:border-2 border-gray-300 rounded-2xl bg-white">
       {/* Label */}
       <p className="text-[12px] text-gray-500 mb-1.5 font-medium">Deals</p>
       
