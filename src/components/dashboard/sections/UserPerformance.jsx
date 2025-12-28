@@ -8,7 +8,7 @@ const users = [
     avatarImg: '/Armin.png',
     revenue: '$209,633',
     sales: 41,
-    salesBg: 'bg-black',
+    salesBg: 'bg-[#1F2937]',
     salesTextColor: 'text-white',
     leads: 118,
     kpi: 0.84,
@@ -21,7 +21,7 @@ const users = [
     avatarImg: '/Mikasa.png',
     revenue: '$156,841',
     sales: 54,
-    salesBg: 'bg-black',
+    salesBg: 'bg-[#1F2937]',
     salesTextColor: 'text-white',
     leads: 103,
     kpi: 0.89,
@@ -46,7 +46,7 @@ const users = [
     avatarImg: '/Eren.png',
     revenue: '$117,115',
     sales: 22,
-    salesBg: 'bg-black',
+    salesBg: 'bg-[#1F2937]',
     salesTextColor: 'text-white',
     leads: 84,
     kpi: 0.79,
@@ -112,7 +112,7 @@ export default function UserPerformance() {
 
               {/* Sales and Leads combined */}
               <div className="sm:w-[100px] min-w-0 flex items-center sm:gap-1 gap-1 justify-center">
-                <span className={`w-5 h-5 sm:w-6 sm:h-6 rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[9px] sm:text-[11px] font-semibold flex items-center justify-center`}>
+                <span className={`w-5 h-5  rounded-lg ${user.salesBg} ${user.salesTextColor || 'text-black'} text-[9px] sm:text-[11px] font-semibold flex items-center justify-center`}>
                   {user.sales}
                 </span>
                 <span className="w-6 h-6 rounded-lg bg-gray-100 text-gray-600 text-[11px] font-semibold flex items-center justify-center">
@@ -132,7 +132,7 @@ export default function UserPerformance() {
 
               {/* W/L Boxes - only show on desktop/tablet */}
               <div className="hidden sm:flex items-center gap-1 min-w-[60px]">
-                <span className="w-6 h-6 rounded-lg bg-[#1F2937] text-white text-[11px] font-semibold flex items-center justify-center">
+                <span className="w-5 h-5 rounded-lg bg-[#1F2937] text-white text-[11px] font-semibold flex items-center justify-center">
                   {user.wl.wins}
                 </span>
                 <span className="w-6 h-6 rounded-lg bg-gray-100 text-gray-600 text-[11px] font-semibold flex items-center justify-center">
