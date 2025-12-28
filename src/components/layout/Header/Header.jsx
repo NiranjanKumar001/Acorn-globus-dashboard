@@ -15,7 +15,7 @@ export default function Header() {
             <div className="block sm:hidden w-3" />
 
             {/* Right Section - Profile and Add Button at far right */}
-            <div className="flex-1 flex items-center justify-end gap-3 sm:gap-3 gap-2">
+            <div className="flex-1 flex items-center justify-end gap-3 sm:gap-3">
                 {/* Hamburger Menu */}
                 <div className='flex items-center gap-1 bg-white p-1 rounded-full'>
                     <button className="w-6 h-6 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors">

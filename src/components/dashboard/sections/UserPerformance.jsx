@@ -161,7 +161,7 @@ export default function UserPerformance() {
             
             {/* Expanded Content for Mikasa */}
             {expandedUser === user.id && user.badges && (
-              <div className="mt-0.5 pt-0.5 border-t border-gray-100">
+              <div className="mt-1 pt-0.5 border-t border-gray-100">
                 {/* Badges */}
                 <div className="hidden sm:flex flex-row flex-nowrap items-center gap-2 mb-1">
                   {user.badges.map((badge, idx) => (
@@ -177,7 +177,7 @@ export default function UserPerformance() {
                 
                 {/* Work with platforms section */}
                 <div className="mb-2">
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center justify-between mb-2">
                     <h3 className="text-[13px] font-medium text-gray-800">Work with platforms</h3>
                     <div className="flex items-center gap-2">
                       <span className="flex items-center gap-1 text-[11px] bg-[#E11D48] text-white px-2 py-0.5 rounded-full font-medium">
@@ -190,40 +190,40 @@ export default function UserPerformance() {
                   </div>
                   
                   {/* Platform Grid */}
-                  <div className="flex gap-2 w-full">
+                  
+                  <div className="flex flex-col sm:flex-row gap-2 w-full">
                     {/* Dribbble - Large Card with Stripes */}
                     <div 
                       className="rounded-xl p-2 flex-1 relative overflow-hidden border border-pink-200 flex flex-col bg-white "
                     >
                       <div className="flex items-center gap-1.5 mb-0 ">
-                        <div className="w-6 h-6 flex-shrink-0 rounded-full bg-white flex items-center justify-center shadow-sm">
-                          <svg className="w-4 h-4 text-[#EA4C89]" viewBox="0 0 24 24" fill="currentColor">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-full bg-white flex items-center justify-center shadow-sm">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-[#EA4C89]" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
                           </svg>
                         </div>
-                        <span className="text-[13px] text-gray-700 font-medium leading-none">Dribbble</span>
+                        <span className="text-[11px] sm:text-[13px] text-gray-700 font-medium leading-none">Dribbble</span>
                       </div>
                       <div className="mt-auto flex justify-between items-center text-[13px] leading-none">
                         <span className="font-bold text-xl text-gray-900">{user.platforms.dribbble.percent}</span>
                         <span className="text-xl text-gray-400">{user.platforms.dribbble.value}</span>
                       </div>
                     </div>
-                    
                     {/* Right Side - Instagram, Google, Meta, Other */}
-                    <div className="flex flex-col gap-1 flex-[2] ">
+                    <div className="flex-1 grid grid-cols-1 gap-1 sm:flex sm:flex-col">
                       {/* Top Row - Instagram, Google, Meta */}
-                      <div className="flex gap-2">
+                      <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-2">
                         {/* Instagram Card */}
                         <div className="bg-white rounded-xl p-2 flex-1 border border-pink-200 flex flex-col">
                           <div className="flex items-center gap-2 mb-0">
-                            <div className="w-6 h-6 flex-shrink-0 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-                              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <rect x="2" y="2" width="20" height="20" rx="5"/>
                                 <circle cx="12" cy="12" r="4"/>
                                 <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
                               </svg>
                             </div>
-                            <span className="text-[13px] text-gray-700 font-medium leading-none">Instagram</span>
+                            <span className="text-[11px] sm:text-[13px] text-gray-700 font-medium leading-none">Instagram</span>
                           </div>
                           <div className="mt-auto p-1">
                             <div className="text-[13px] flex justify-between items-center leading-none">
@@ -232,53 +232,45 @@ export default function UserPerformance() {
                             </div>
                           </div>
                         </div>
-                        
-                        {/* Right Column - Google + Meta */}
-                        <div className="flex flex-col gap-1 flex-1">
-                          {/* Google Card with Stripes */}
-                          <div 
-                            className="rounded-xl p-1 flex-1 border border-gray-200 bg-white"
-                          >
-                            <div className="flex items-center gap-2">
-                              <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
-                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                              </svg>
-                              <span className="text-[13px] text-gray-700 font-medium leading-none">Google</span>
-                            </div>
-                            <div className="text-[13px] mt-0 leading-none flex justify-between">
-                              <span className="font-semibold text-gray-600">{user.platforms.google.percent}</span>
-                              <span className="text-gray-400">{user.platforms.google.value}</span>
-                            </div>
+                        {/* Google Card with Stripes */}
+                        <div className="rounded-xl p-1 flex-1 border border-gray-200 bg-white">
+                          <div className="flex items-center gap-2">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24">
+                              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span className="text-[11px] sm:text-[13px] text-gray-700 font-medium leading-none">Google</span>
                           </div>
-                          
-                          {/* Meta/Flickr Card */}
-                          <div className="bg-white rounded-xl p-1 border border-gray-200">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2">
-                                <div className="flex items-center flex-shrink-0">
-                                  <div className="w-2 h-4 bg-[#0063DC] rounded-sm"></div>
-                                  <div className="w-2 h-4 bg-[#FF0084] rounded-sm ml-0.5"></div>
-                                </div>
-                                <span className="text-[13px] text-gray-600 leading-none">{user.platforms.meta.percent}</span>
+                          <div className="text-[13px] mt-0 leading-none flex justify-between">
+                            <span className="font-semibold text-gray-600">{user.platforms.google.percent}</span>
+                            <span className="text-gray-400">{user.platforms.google.value}</span>
+                          </div>
+                        </div>
+                        {/* Meta/Flickr Card */}
+                        <div className="bg-white rounded-xl p-1 border border-gray-200">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="flex items-center flex-shrink-0">
+                                <div className="w-2 h-4 bg-[#0063DC] rounded-sm"></div>
+                                <div className="w-2 h-4 bg-[#FF0084] rounded-sm ml-0.5"></div>
                               </div>
-                              <span className="text-[13px] text-gray-400 leading-none">{user.platforms.meta.value}</span>
+                              <span className="text-[11px] sm:text-[13px] text-gray-600 leading-none">{user.platforms.meta.percent}</span>
                             </div>
+                            <span className="text-[11px] sm:text-[13px] text-gray-400 leading-none">{user.platforms.meta.value}</span>
                           </div>
                         </div>
                       </div>
-                      
                       {/* Other Card - Full Width */}
                       <div className="bg-white rounded-xl p-1 flex items-center justify-between border border-gray-200">
                         <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 flex-shrink-0 rounded-lg bg-gray-200 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-lg bg-gray-200 flex items-center justify-center">
+                            <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                               <rect x="3" y="3" width="18" height="18" rx="2"/>
                             </svg>
                           </div>
-                          <span className="text-[13px] text-gray-700 font-medium leading-none">Other</span>
+                          <span className="text-[11px] sm:text-[13px] text-gray-700 font-medium leading-none">Other</span>
                         </div>
                         <div className="text-[13px] leading-none">
                           <span className="font-semibold text-gray-600">{user.platforms.other.percent}</span>

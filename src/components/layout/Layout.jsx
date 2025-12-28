@@ -57,7 +57,7 @@ export default function Layout({ children }) {
         {/* Header */}
         <Header />
         {/* Page Content */}
-        <main className="flex-1 overflow-auto px-6 py-3 bg-white rounded-3xl scrollbar-hide">
+        <main className="flex-1 overflow-auto px-4 py-3 sm:px-6 sm:py-3 bg-white rounded-3xl scrollbar-hide">
           {showContent ? (
             children
           ) : (

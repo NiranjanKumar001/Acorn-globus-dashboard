@@ -71,12 +71,12 @@ export default function RevenueBarChart() {
                 </div>
                 
                 {/* Bar Group with individual avatars */}
-                <div className="flex items-end gap-1">
+                <div className="flex items-end gap-0 sm:gap-1">
                   {group.bars.map((bar, barIdx) => (
                     <div key={barIdx} className="flex flex-col items-center">
                       {/* Bar */}
                       <div 
-                        className="w-5 rounded-xl overflow-hidden"
+                        className="w-4 sm:w-6 rounded-xl overflow-hidden"
                         style={{ height: `${bar.height}px` }}
                       >
                         <div 
