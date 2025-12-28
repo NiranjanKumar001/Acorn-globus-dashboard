@@ -209,7 +209,7 @@ export default function UserPerformance() {
                         <span className="text-xl text-gray-400">{user.platforms.dribbble.value}</span>
                       </div>
                     </div>
-                    {/* Right Side - Instagram, Google+Meta, Other */}
+                    {/* Right Side - Instagram, Google+Meta, Other   */}
                     <div className="w-full sm:w-[230px] grid grid-cols-1 gap-1 sm:flex sm:flex-col">
                       {/* Top Row - Instagram and Google+Meta */}
                       <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-2">
