@@ -194,7 +194,7 @@ export default function UserPerformance() {
                   <div className="flex flex-col sm:flex-row gap-2 w-full">
                     {/* Dribbble - Large Card with Stripes */}
                     <div 
-                      className="rounded-xl p-2 flex-1 sm:max-w-[180px] relative overflow-hidden border border-pink-200 flex flex-col bg-white "
+                      className="rounded-xl p-2 flex-1 sm:w-auto sm:flex-auto relative overflow-hidden border border-pink-200 flex flex-col bg-white "
                     >
                       <div className="flex items-center gap-1.5 mb-0 ">
                         <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-full bg-white flex items-center justify-center shadow-sm">
@@ -210,11 +210,11 @@ export default function UserPerformance() {
                       </div>
                     </div>
                     {/* Right Side - Instagram, Google+Meta, Other */}
-                    <div className="flex-1 grid grid-cols-1 gap-1 sm:flex sm:flex-col">
+                    <div className="w-full sm:w-[230px] grid grid-cols-1 gap-1 sm:flex sm:flex-col">
                       {/* Top Row - Instagram and Google+Meta */}
                       <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-2">
                         {/* Instagram Card */}
-                        <div className="bg-white rounded-xl p-2 flex-1 sm:max-w-[140px] border border-pink-200 flex flex-col">
+                        <div className="bg-white rounded-xl p-2 flex-1 sm:max-w-[110px] border border-pink-200 flex flex-col">
                           <div className="flex items-center gap-2 mb-0">
                             <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
                               <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -233,7 +233,7 @@ export default function UserPerformance() {
                           </div>
                         </div>
                         {/* Google + Meta stacked on desktop */}
-                        <div className="flex flex-col gap-2 flex-1">
+                        <div className="flex flex-col gap-2 flex-1 sm:max-w-[110px]">
                           {/* Google Card with Stripes */}
                           <div className="rounded-xl p-1 border border-gray-200 bg-white">
                             <div className="flex items-center gap-2 mb-2 sm:mb-4">
