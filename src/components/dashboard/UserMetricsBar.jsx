@@ -32,7 +32,7 @@ export default function UserMetricsBar() {
   return (
     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
       {/* User Stats Pills */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 min-w-0 sm:bg-gray-100 sm:w-full rounded-full p-1">
+      <div className="flex flex-col tablet:flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 min-w-0 sm:bg-gray-100 sm:w-full rounded-full tablet:rounded-xl p-1">
         {users.map((user, idx) => (
             <div
               key={user.id}
@@ -59,7 +59,12 @@ export default function UserMetricsBar() {
             </div>
             
             {/* Percentage */}
-            <span className={`${user.id === 4 ? 'text-[13px]' : 'text-[11px]'} text-gray-400 font-medium`}>{user.percentage}</span>
+            <span
+              className={
+                `${user.id === 4 ? 'text-[13px] tablet:hidden' : 'text-[11px]'} text-gray-400 font-medium`}
+            >
+              {user.percentage}
+            </span>
           </div>
         ))}
       </div>
