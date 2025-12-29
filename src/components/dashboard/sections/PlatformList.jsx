@@ -61,18 +61,20 @@ export default function PlatformList() {
                 </div>
               )}
               {platform.name === 'Instagram' && (
-                <div className="w-6 h-6 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24">
+                <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}>
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                      <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#FFDC80"/>
-                        <stop offset="50%" stopColor="#F77737"/>
-                        <stop offset="100%" stopColor="#C13584"/>
-                      </linearGradient>
+                      <radialGradient id="ig-radial" cx="50%" cy="50%" r="80%" fx="30%" fy="107%">
+                        <stop offset="0%" stopColor="#fdf497"/>
+                        <stop offset="5%" stopColor="#fdf497"/>
+                        <stop offset="45%" stopColor="#fd5949"/>
+                        <stop offset="60%" stopColor="#d6249f"/>
+                        <stop offset="90%" stopColor="#285AEB"/>
+                      </radialGradient>
                     </defs>
-                    <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="url(#ig-gradient)" strokeWidth="2"/>
-                    <circle cx="12" cy="12" r="4" fill="none" stroke="url(#ig-gradient)" strokeWidth="2"/>
-                    <circle cx="18" cy="6" r="1.5" fill="#C13584"/>
+                    <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="white" strokeWidth="2"/>
+                    <circle cx="12" cy="12" r="5" fill="none" stroke="white" strokeWidth="2"/>
+                    <circle cx="17" cy="7" r="1.3" fill="white"/>
                   </svg>
                 </div>
               )}
