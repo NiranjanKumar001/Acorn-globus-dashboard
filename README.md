@@ -1,5 +1,7 @@
 # 📊 Premium Sales & Performance Intelligence Dashboard
 
+![Dashboard Preview](dashboard.png)
+
 A state-of-the-art, high-fidelity sales analytics and team performance dashboard. Designed for premium visual aesthetics, responsive scalability, and seamless user interaction, this interface showcases complex sales metrics, team activity tracking, platform values, and revenue growth.
 
 ---
